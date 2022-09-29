@@ -7,6 +7,7 @@ import com.example.criptobenjaespi.repository.CriptoRepository
 import kotlinx.coroutines.Dispatchers
 
 class CriptoViewModel(private val repo: CriptoRepository):ViewModel() {
+    //prueba
 
     fun fetchCriptoList() = liveData(Dispatchers.IO){
         emit(Resource.Loading())
