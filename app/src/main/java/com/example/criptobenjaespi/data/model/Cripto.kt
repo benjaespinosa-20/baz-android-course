@@ -8,6 +8,9 @@ data class Payload(
     val minimum_amount: String,
     val minimum_price: String,
     val minimum_value: String
-)
+    )
 
-data class CriptoList(val payload: List<Payload> = listOf(), val success: Boolean = true)
+data class CriptoList(
+    val payload: List<Payload> = listOf(),
+    val success: Boolean = true
+)
