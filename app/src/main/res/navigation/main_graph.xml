@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/criptoFragment"
-        android:name="com.example.criptobenjaespi.ui.CriptoFragment"
+        android:name="com.example.criptobenjaespi.ui.criptolist.CriptoFragment"
         android:label="fragment_cripto"
         tools:layout="@layout/fragment_cripto" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailCriptoFragment"
-        android:name="com.example.criptobenjaespi.ui.DetailCriptoFragment"
+        android:name="com.example.criptobenjaespi.ui.criptodetail.DetailCriptoFragment"
         android:label="fragment_detail_cripto"
         tools:layout="@layout/fragment_detail_cripto" />
 </navigation>

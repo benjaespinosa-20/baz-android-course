@@ -11,12 +11,3 @@ interface WebService{
     @GET("available_books/")
     suspend fun getCriptoList(): CriptoList
 }
-
-object RetrofitClient{
-    val webService by lazy{
-        Retrofit.Builder()
-            .baseUrl(AppConstans.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
-            .build().create(WebService::class.java)
-    }
-}
