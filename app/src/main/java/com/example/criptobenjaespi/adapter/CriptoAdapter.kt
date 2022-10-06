@@ -44,7 +44,6 @@ class CriptoAdapter(
     private inner class CriptoViewHolder(val binding: ListItemBinding, val context: Context): BaseViewHolder<Payload>(binding.root){
         override fun bind(item: Payload) {
             binding.tvCriptoName.text = item.book
-            //val image = item.book
 
             val imageBook:Int = when(item.book){
                 "bat_mxn" -> R.drawable.bat_mxn

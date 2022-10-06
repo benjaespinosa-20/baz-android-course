@@ -29,27 +29,6 @@ class DetailCriptoFragment : Fragment(R.layout.fragment_detail_cripto) {
         binding.tvLowData.text = args.minimumPrice
         binding.tvLastData.text = args.maximumValue
 
-
-
-        /*viewModel.fetchCriptoTicker(bookName).observe(viewLifecycleOwner, Observer { ticker ->
-            when (ticker){
-                is Resource.Loading -> {
-                    binding.progressBar.visibility = View.VISIBLE
-                }
-                is Resource.Succes -> {
-
-                    binding.progressBar.visibility = View.GONE
-                    binding.tvCriptoName.text = ticker.data.book
-                    binding.tvHightData.text = ticker.data.hight
-                    binding.tvLastData.text = ticker.data.last
-                    binding.tvLowData.text = ticker.data.low
-                    binding.tvVolumeData.text = ticker.data.volume
-                }
-                is Resource.Failure -> {
-                    binding.progressBar.visibility = View.VISIBLE
-                }
-            }
-        })*/
     }
 
 }
