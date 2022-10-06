@@ -1,10 +1,8 @@
 package com.example.criptobenjaespi.presentation
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
 import com.example.criptobenjaespi.core.Resource
-import com.example.criptobenjaespi.repository.CriptoRepository
 import com.example.criptobenjaespi.usecases.GetListCriptoByBookUseCase
 import com.example.criptobenjaespi.usecases.GetListCriptoUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel

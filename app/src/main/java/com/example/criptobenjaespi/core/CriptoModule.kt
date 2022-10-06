@@ -5,8 +5,6 @@ import com.example.criptobenjaespi.data.remote.CriptoDataSourceImpl
 import com.example.criptobenjaespi.repository.CriptoRepository
 import com.example.criptobenjaespi.repository.CriptoRepositoryImpl
 import com.example.criptobenjaespi.repository.WebService
-import com.example.criptobenjaespi.usecases.GetListCriptoByBookUseCase
-import com.example.criptobenjaespi.usecases.GetListCriptoUseCase
 import com.example.criptobenjaespi.utils.AppConstans
 import com.google.gson.GsonBuilder
 import dagger.Binds

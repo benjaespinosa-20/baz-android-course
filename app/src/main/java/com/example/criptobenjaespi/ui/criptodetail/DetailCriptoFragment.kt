@@ -4,14 +4,10 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import com.example.criptobenjaespi.R
-import com.example.criptobenjaespi.adapter.CriptoAdapter
-import com.example.criptobenjaespi.core.Resource
 import com.example.criptobenjaespi.databinding.FragmentDetailCriptoBinding
 import com.example.criptobenjaespi.presentation.CriptoTickerViewModel
-import com.example.criptobenjaespi.presentation.CriptoViewModel
 
 class DetailCriptoFragment : Fragment(R.layout.fragment_detail_cripto) {
 

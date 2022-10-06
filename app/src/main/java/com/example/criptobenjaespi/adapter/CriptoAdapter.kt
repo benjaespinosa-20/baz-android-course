@@ -3,12 +3,10 @@ package com.example.criptobenjaespi.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.criptobenjaespi.R
 import com.example.criptobenjaespi.core.BaseViewHolder
-import com.example.criptobenjaespi.data.model.CriptoList
 import com.example.criptobenjaespi.data.model.Payload
 import com.example.criptobenjaespi.databinding.ListItemBinding
 
