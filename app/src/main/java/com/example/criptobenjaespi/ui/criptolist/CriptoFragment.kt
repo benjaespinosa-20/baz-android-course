@@ -6,14 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.criptobenjaespi.R
+import com.example.criptobenjaespi.adapter.CriptoAdapter
 import com.example.criptobenjaespi.core.Resource
+import com.example.criptobenjaespi.data.model.CriptoList
+import com.example.criptobenjaespi.data.model.Payload
 import com.example.criptobenjaespi.databinding.FragmentCriptoBinding
 import com.example.criptobenjaespi.presentation.CriptoViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CriptoFragment : Fragment(R.layout.fragment_cripto) {
+class CriptoFragment : Fragment(R.layout.fragment_cripto), CriptoAdapter.OnCriptoClickListener {
 
     private lateinit var binding: FragmentCriptoBinding
     private val viewModel: CriptoViewModel by viewModels()
@@ -25,19 +30,29 @@ class CriptoFragment : Fragment(R.layout.fragment_cripto) {
         viewModel.fetchCriptoList().observe(viewLifecycleOwner, Observer { listCripto ->
             when (listCripto){
                 is Resource.Loading -> {
-                    //binding.progressBar.visibility = View.VISIBLE
-                    Log.d("LiveData", "Loading")
+                    binding.progressBar.visibility = View.VISIBLE
                 }
                 is Resource.Succes -> {
-                    //binding.rvCriptos.visibility = View.GONE
-                    Log.d("LiveData", "${listCripto.data.toString()}")
+                    binding.progressBar.visibility = View.GONE
+                    binding.rvCriptos.adapter = CriptoAdapter(listCripto.data.payload, this@CriptoFragment)
+
                 }
                 is Resource.Failure -> {
-                    //binding.progressBar.visibility = View.VISIBLE
-                    Log.d("LiveData", "${listCripto.exception}")
+                    binding.progressBar.visibility = View.VISIBLE
                 }
             }
         })
+    }
+
+    override fun onCriptoClick(cripto: Payload) {
+        val action = CriptoFragmentDirections.actionCriptoFragmentToDetailCriptoFragment(
+            cripto.book,
+            cripto.maximum_amount,
+            cripto.maximum_price,
+            cripto.minimum_price,
+            cripto.maximum_value
+        )
+        findNavController().navigate(action)
     }
 
 }
