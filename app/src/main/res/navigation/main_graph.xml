@@ -18,5 +18,17 @@
         android:id="@+id/detailCriptoFragment"
         android:name="com.example.criptobenjaespi.ui.DetailCriptoFragment"
         android:label="fragment_detail_cripto"
-        tools:layout="@layout/fragment_detail_cripto" />
+        tools:layout="@layout/fragment_detail_cripto" >
+        <argument
+            android:name="book"
+            app:argType="string" />
+        <argument
+            android:name="maximum_amount"
+            app:argType="string" />
+        <argument
+            android:name="maximum_price"
+            app:argType="string" />
+        <argument android:name="minimum_price" />
+        <argument android:name="maximum_value" />
+    </fragment>
 </navigation>

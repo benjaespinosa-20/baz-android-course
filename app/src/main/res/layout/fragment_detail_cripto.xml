@@ -14,13 +14,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/tv_criptoName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CriptoName"
             android:textColor="@color/black"
-            android:textSize="22sp"
+            android:textSize="26sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,21 +42,21 @@
             android:id="@+id/tv_volume"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="volume"
+            android:text="Volume:"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintHorizontal_bias="0.099"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_criptoName"
-            app:layout_constraintVertical_bias="0.03" />
+            app:layout_constraintVertical_bias="0.085" />
 
         <TextView
             android:id="@+id/tv_hight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="hight"
+            android:text="Hight:"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -53,13 +64,13 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/tv_volume"
             app:layout_constraintTop_toBottomOf="@+id/tv_volume"
-            app:layout_constraintVertical_bias="0.102" />
+            app:layout_constraintVertical_bias="0.157" />
 
         <TextView
             android:id="@+id/tv_last"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="last"
+            android:text="Last:"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -67,13 +78,13 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/tv_volume"
             app:layout_constraintTop_toBottomOf="@+id/tv_hight"
-            app:layout_constraintVertical_bias="0.131" />
+            app:layout_constraintVertical_bias="0.233" />
 
         <TextView
             android:id="@+id/tv_low"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="low"
+            android:text="Low:"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -81,7 +92,63 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/tv_volume"
             app:layout_constraintTop_toBottomOf="@+id/tv_last"
-            app:layout_constraintVertical_bias="0.152" />
+            app:layout_constraintVertical_bias="0.412" />
+
+        <TextView
+            android:id="@+id/tv_volumeData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="volumeData"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_volume"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_criptoName"
+            app:layout_constraintTop_toTopOf="@+id/tv_volume"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tv_hightData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hightData"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_hight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_criptoName"
+            app:layout_constraintTop_toTopOf="@+id/tv_hight"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_lastData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="lastData"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_last"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_criptoName"
+            app:layout_constraintTop_toTopOf="@+id/tv_last"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_lowData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LowData"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_low"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_criptoName"
+            app:layout_constraintTop_toTopOf="@+id/tv_low"
+            app:layout_constraintVertical_bias="0.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
