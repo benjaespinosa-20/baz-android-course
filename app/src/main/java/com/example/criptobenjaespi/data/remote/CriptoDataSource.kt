@@ -1,11 +1,15 @@
 package com.example.criptobenjaespi.data.remote
 
 import com.example.criptobenjaespi.data.model.CriptoList
+import com.example.criptobenjaespi.repository.WebService
+import javax.inject.Inject
 
-class CriptoDataSource {
+interface CriptoDataSource{
+    suspend fun getCriptoList(): CriptoList
+}
+class CriptoDataSourceImpl @Inject constructor(private val webService: WebService): CriptoDataSource {
 
-    fun getCriptoList(): CriptoList{
-        return CriptoList()
-    }
+    override suspend fun getCriptoList():CriptoList = webService.getCriptoList()
 
 }
+
