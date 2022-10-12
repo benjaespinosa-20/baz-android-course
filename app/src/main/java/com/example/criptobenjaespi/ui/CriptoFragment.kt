@@ -23,7 +23,7 @@ class CriptoFragment : Fragment(R.layout.fragment_cripto), CriptoAdapter.OnCript
     private val viewModel by viewModels<CriptoViewModel> {
         CriptoViewModelFactory(CriptoRepositoryImpl
         (CriptoDataSource(RetrofitClient.webservice))) }
-
+//prueba
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentCriptoBinding.bind(view)
