@@ -9,7 +9,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.criptobenjaespi.R
 import com.example.criptobenjaespi.adapter.CriptoAdapter
 import com.example.criptobenjaespi.core.Resource
-import com.example.criptobenjaespi.data.model.Payload
+import com.example.criptobenjaespi.data.remote.model.AvailableBookNetwork
+import com.example.criptobenjaespi.data.repository.model.CriptoList
 import com.example.criptobenjaespi.databinding.FragmentCriptoBinding
 import com.example.criptobenjaespi.presentation.CriptoViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,30 +25,30 @@ class CriptoFragment : Fragment(R.layout.fragment_cripto), CriptoAdapter.OnCript
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentCriptoBinding.bind(view)
 
-        viewModel.fetchCriptoList().observe(viewLifecycleOwner, Observer { listCripto ->
-            when (listCripto){
+        viewModel.fetchCriptoList().observe(viewLifecycleOwner) { listCripto ->
+            when (listCripto) {
                 is Resource.Loading -> {
                     binding.progressBar.visibility = View.VISIBLE
                 }
                 is Resource.Succes -> {
                     binding.progressBar.visibility = View.GONE
-                    binding.rvCriptos.adapter = CriptoAdapter(listCripto.data.payload, this@CriptoFragment)
+                    binding.rvCriptos.adapter = CriptoAdapter(listCripto.data, this@CriptoFragment)
 
                 }
                 is Resource.Failure -> {
                     binding.progressBar.visibility = View.VISIBLE
                 }
             }
-        })
+        }
     }
 
-    override fun onCriptoClick(cripto: Payload) {
+    override fun onCriptoClick(cripto: CriptoList) {
         val action = CriptoFragmentDirections.actionCriptoFragmentToDetailCriptoFragment(
             cripto.book,
-            cripto.maximum_amount,
-            cripto.maximum_price,
-            cripto.minimum_price,
-            cripto.maximum_value
+            cripto.maximumAmount,
+            cripto.maximumPrice,
+            cripto.minimumPrice,
+            cripto.maximumValue
         )
         findNavController().navigate(action)
     }

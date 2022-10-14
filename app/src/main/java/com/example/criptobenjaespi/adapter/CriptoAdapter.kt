@@ -7,16 +7,17 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.criptobenjaespi.R
 import com.example.criptobenjaespi.core.BaseViewHolder
-import com.example.criptobenjaespi.data.model.Payload
+import com.example.criptobenjaespi.data.remote.model.AvailableBookNetwork
+import com.example.criptobenjaespi.data.repository.model.CriptoList
 import com.example.criptobenjaespi.databinding.ListItemBinding
 
 class CriptoAdapter(
-    private val criptoList: List<Payload>,
+    private val criptoList: List<CriptoList>,
     private val itemClickListener: OnCriptoClickListener
     ): RecyclerView.Adapter<BaseViewHolder<*>>() {
 
     interface OnCriptoClickListener{
-        fun onCriptoClick(cripto: Payload)
+        fun onCriptoClick(cripto: CriptoList)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
@@ -39,8 +40,8 @@ class CriptoAdapter(
 
     override fun getItemCount(): Int = criptoList.size
 
-    private inner class CriptoViewHolder(val binding: ListItemBinding, val context: Context): BaseViewHolder<Payload>(binding.root){
-        override fun bind(item: Payload) {
+    private inner class CriptoViewHolder(val binding: ListItemBinding, val context: Context): BaseViewHolder<CriptoList>(binding.root){
+        override fun bind(item: CriptoList) {
             binding.tvCriptoName.text = item.book
 
             val imageBook:Int = when(item.book){

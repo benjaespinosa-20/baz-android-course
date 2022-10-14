@@ -1,31 +1,23 @@
 package com.example.criptobenjaespi.data.local
 
-import android.content.Context
 import androidx.room.Database
-import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.criptobenjaespi.data.model.PayloadEntity
+import com.example.criptobenjaespi.data.local.model.AsksBidsEntity
+import com.example.criptobenjaespi.data.local.model.AvailableBookEntity
+import com.example.criptobenjaespi.data.local.model.OrderBooksEntity
+import com.example.criptobenjaespi.data.local.model.TickerDetailEntity
 
-@Database(entities = [PayloadEntity::class], version = 1)
+@Database(entities = [AvailableBookEntity::class, TickerDetailEntity::class, OrderBooksEntity::class, AsksBidsEntity::class], version = 3)
 abstract class AppDataBase: RoomDatabase() {
 
-    abstract fun criptosDao(): CriptoDao
+    abstract fun getTickerDao(): TickerDao
+
+    abstract fun criptosDao(): AvailableBookDao
 
     companion object {
-        private var INSTANCE: AppDataBase? = null
-
-        fun getDatabase(context: Context): AppDataBase{
-            INSTANCE = INSTANCE ?: Room.databaseBuilder(
-                context.applicationContext,
-                AppDataBase::class.java,
-                "cripto_table"
-            ).build()
-            return  INSTANCE!!
-        }
-
-        fun destroyInstance(){
-            INSTANCE = null
-        }
+        const val NAMEDATABASE :String = "cripto.db"
     }
+
+    abstract fun getOrderBooksDao(): OrderBookDao
 
 }

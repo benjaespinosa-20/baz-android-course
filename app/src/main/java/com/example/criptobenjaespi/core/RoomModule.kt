@@ -24,4 +24,12 @@ object RoomModule {
     @Singleton
     @Provides
     fun provideAppDao(db: AppDataBase) = db.criptosDao()
+
+    @Singleton
+    @Provides
+    fun provideTickerDao(db: AppDataBase) = db.getTickerDao()
+
+    @Singleton
+    @Provides
+    fun provideOrderBooksDao(db: AppDataBase) = db.getOrderBooksDao()
 }
