@@ -1,7 +1,6 @@
 package com.example.criptobenjaespi.usecases
 
 import android.util.Log
-import com.example.criptobenjaespi.data.remote.model.DetailTickerNetworkModel
 import com.example.criptobenjaespi.data.repository.CriptoRepository
 import com.example.criptobenjaespi.data.repository.model.DetailTicker
 import javax.inject.Inject

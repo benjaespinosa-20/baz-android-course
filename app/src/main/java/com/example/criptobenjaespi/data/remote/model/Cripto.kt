@@ -1,7 +1,5 @@
 package com.example.criptobenjaespi.data.remote.model
 
-import com.example.criptobenjaespi.data.local.model.AvailableBookEntity
-
 data class AvailableBookNetwork(
     val book: String = "",
     val maximum_amount: String= "",

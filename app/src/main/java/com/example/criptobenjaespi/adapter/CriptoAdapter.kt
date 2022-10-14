@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.criptobenjaespi.R
 import com.example.criptobenjaespi.core.BaseViewHolder
-import com.example.criptobenjaespi.data.remote.model.AvailableBookNetwork
 import com.example.criptobenjaespi.data.repository.model.CriptoList
 import com.example.criptobenjaespi.databinding.ListItemBinding
 

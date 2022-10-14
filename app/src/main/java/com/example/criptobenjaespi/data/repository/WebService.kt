@@ -5,7 +5,6 @@ import com.example.criptobenjaespi.data.remote.model.AvailableBookNetwork
 import com.example.criptobenjaespi.data.remote.model.DetailTickerNetworkModel
 import com.example.criptobenjaespi.data.remote.model.OrderBookNetworkModel
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface WebService{

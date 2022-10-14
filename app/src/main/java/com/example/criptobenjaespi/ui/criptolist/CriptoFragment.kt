@@ -4,12 +4,10 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.criptobenjaespi.R
 import com.example.criptobenjaespi.adapter.CriptoAdapter
 import com.example.criptobenjaespi.core.Resource
-import com.example.criptobenjaespi.data.remote.model.AvailableBookNetwork
 import com.example.criptobenjaespi.data.repository.model.CriptoList
 import com.example.criptobenjaespi.databinding.FragmentCriptoBinding
 import com.example.criptobenjaespi.presentation.CriptoViewModel

@@ -1,15 +1,10 @@
 package com.example.criptobenjaespi.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.criptobenjaespi.R
 import com.example.criptobenjaespi.core.BaseViewHolder
-import com.example.criptobenjaespi.data.repository.model.CriptoList
 import com.example.criptobenjaespi.data.repository.model.AsksBidsModel
-import com.example.criptobenjaespi.databinding.ListItemBinding
 import com.example.criptobenjaespi.databinding.ListorderbookItemBinding
 
 class OrderBooksAdapters (): RecyclerView.Adapter<BaseViewHolder<*>>() {
