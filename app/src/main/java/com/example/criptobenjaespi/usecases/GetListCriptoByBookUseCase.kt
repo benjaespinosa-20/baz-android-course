@@ -1,9 +1,9 @@
 package com.example.criptobenjaespi.usecases
 
-import com.example.criptobenjaespi.data.model.CriptoList
-import com.example.criptobenjaespi.repository.CriptoRepository
+import com.example.criptobenjaespi.data.repository.CriptoRepository
+import com.example.criptobenjaespi.data.repository.model.CriptoList
 import javax.inject.Inject
 
 class GetListCriptoByBookUseCase @Inject constructor(private val criptoRepository: CriptoRepository) {
-    suspend operator fun invoke(book: String): CriptoList = criptoRepository.getListCriptoFilterByBook(book)
+    suspend operator fun invoke(book: String): List<CriptoList> = criptoRepository.getListCriptoFilterByBook(book)
 }
